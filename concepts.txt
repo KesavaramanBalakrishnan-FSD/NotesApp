@@ -1,0 +1,65 @@
+connect-mongo:
+Purpose: To store session data in a MongoDB database.
+Usage: When using express-session, connect-mongo helps store session information in MongoDB rather than in-memory, which is useful for persistence across server restarts and scaling.
+
+dotenv:
+Purpose: Loads environment variables from a .env file into process.env.
+Usage: Helps in managing sensitive data like API keys, database credentials, etc., in a separate file.
+Example:
+
+ejs:
+Purpose: Embedded JavaScript templating engine to render HTML pages with dynamic content.
+Usage: Used to create views where server-side logic can be embedded in HTML.
+
+express:
+Purpose: Web application framework for Node.js.
+Usage: Provides a robust set of features for building single and multi-page web applications and APIs.
+
+express-ejs-layouts:
+Purpose: A layout system for ejs templates.
+Usage: Helps organize views in a way that common layout components (like headers/footers) can be reused.
+
+express-session:
+Purpose: Middleware to manage sessions in an Express application.
+Usage: Allows storing user sessions, essential for authentication and user-specific data.
+
+method-override:
+Purpose: Lets you use HTTP verbs like PUT or DELETE in places where they aren't supported (e.g., HTML forms only support GET and POST).
+Usage: Useful in RESTful applications where these methods are required.
+
+mongoose:
+Purpose: ODM (Object Data Modeling) library for MongoDB and Node.js.
+Usage: Simplifies MongoDB interactions by providing a schema-based solution to model your application data.
+
+passport:
+Purpose: Middleware for authentication.
+Usage: Integrates various authentication strategies like local, OAuth, etc.
+
+passport-google-oauth20:
+Purpose: Passport strategy for authenticating with Google using OAuth 2.0.
+Usage: Used to allow users to log in via their Google accounts.
+
+
+
+Deep:
+1. express-session
+js
+Copy code
+const session = require("express-session");
+Purpose: This middleware manages user sessions in an Express.js application. It stores session data (e.g., login info) on the server-side and assigns a unique session ID to each user, which is stored as a cookie on the client's browser.
+Usage: You use this to track user information across requests, so if someone logs in, their session can persist as they navigate the site.
+2. passport
+js
+Copy code
+const passport = require("passport");
+Purpose: Passport.js is an authentication middleware for Node.js. It supports different authentication strategies, such as local authentication (username/password), OAuth, etc.
+Usage: You use Passport to authenticate users (login, signup) in your app. It integrates with sessions to store user data across requests.
+3. connect-mongo
+js
+Copy code
+const mongoStore = require("connect-mongo");
+Purpose: This package is used to store session data in MongoDB. Instead of storing session data in memory (which would be lost when the app restarts), you can store it in MongoDB, making it persistent and scalable.
+Usage: You use this to ensure user sessions are saved in MongoDB, allowing users to stay logged in even if the server restarts.
+
+//learn how to create credentials in google cloud console. utube:raddy, notes app, vedio time 1 hr 21th making
+ 
